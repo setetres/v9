@@ -71,6 +71,7 @@
         // Window Load
 
         function pageLoaded() {
+            $('.body').removeClass('body--loading');
             $('.body').addClass('body--active');
             $('.burger').removeClass('burger--loading');
             $('.line').removeClass('line--loading');
@@ -78,18 +79,25 @@
             $('.wrapper').removeClass('wrapper--loading');
             setTimeout(function() {
                 $('.burger').addClass('burger--ready');
-                // $('.pulse').addClass('pulse--ready');
             }, 1250);
         }
 
         // Burger
 
         $('.burger').on('click', function() {
+            document.title = 'Sete Três';
+            setTimeout(function() {
+                $('html, body').animate({scrollTop: 0}, 0);
+            }, 1000);
+            setTimeout(function() {
+                $('.section').remove();
+            }, 1100);
             if ($('.burger').hasClass('burger--active')) {
                 closeNavigation();
             } else {
                 openNavigation();
             }
+            return false;
         });
 
         // Page transition
@@ -98,7 +106,6 @@
             $('.burger').removeClass('burger--active');
             $('.burger').removeClass('burger--loading');
             $('.navigation').removeClass('navigation--active');
-            // $('.pulse').removeClass('pulse--ready');
             $('.pulse__loader').addClass('pulse__loader--active');
             $('.progress__bar').css({width: 0});
             $('.section').removeClass('section--active');
@@ -112,7 +119,6 @@
         var openNavigation = function() {
             $('.burger').addClass('burger--active');
             $('.header__title').addClass('header__title--active');
-            // $('.pulse').removeClass('pulse--ready');
             $('.section--home').removeClass('section--active');
             $('.section').removeClass('section--active');
             setTimeout(function() {
@@ -128,7 +134,6 @@
             $('.header__title').removeClass('header__title--active');
             $('.navigation').removeClass('navigation--active');
             $('.progress__bar').css({width: 0});
-            // $('.pulse').addClass('pulse--ready');
         };
 
         // Show content
@@ -144,20 +149,20 @@
 
         // Route: index
 
-        var index = function() {
-            $('.section').removeClass('section--active');
-            setTimeout(function() {
-                $('html, body').animate({scrollTop: 0}, 0);
-            }, 1000);
-            setTimeout(function() {
-                $('.main-wrapper').load('/index.html .section--home', function() {
-                    document.title = 'Sete Três';
-                    setTimeout(function() {
-                        $('.section--home').addClass('section--active');
-                    }, 500);
-                });
-            }, 500);
-        };
+        // var index = function() {
+        //     $('.section').removeClass('section--active');
+        //     setTimeout(function() {
+        //         $('html, body').animate({scrollTop: 0}, 0);
+        //     }, 1000);
+        //     setTimeout(function() {
+        //         $('.main-wrapper').load('/index.html .section--home', function() {
+        //             document.title = 'Sete Três';
+        //             setTimeout(function() {
+        //                 $('.section--home').addClass('section--active');
+        //             }, 500);
+        //         });
+        //     }, 500);
+        // };
 
         // Route: about
 
@@ -179,11 +184,11 @@
         var archive = function() {
             pageTransition();
             setTimeout(function() {
-                $('.main-wrapper').load('/archive .setetres--about', function() {
+                $('.main-wrapper').load('/archive/index.html .setetres--archive', function() {
                     document.title = 'Sete Três — Archive';
                     showContent();
                     setTimeout(function() {
-                        $('.setetres--about').addClass('section--active');
+                        $('.setetres--archive').addClass('section--active');
                     }, 500);
                 });
             }, 500);
@@ -251,12 +256,11 @@
 
         // Routes
 
-        page('/', index);
-        page('/about', about);
-        page('/archive', archive);
-        page('/cacete-company', cacete);
-        page('/contact', contact);
-        page('/inkstarter', inkstarter);
+        page('/about/', about);
+        page('/archive/', archive);
+        page('/cacete-company/', cacete);
+        page('/contact/', contact);
+        page('/inkstarter/', inkstarter);
         page();
 
         $(window).on('load', function() {
