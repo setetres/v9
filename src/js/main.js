@@ -164,7 +164,7 @@
         var about = function() {
             pageTransition();
             setTimeout(function() {
-                $('.main-wrapper').load('/about .section--about', function() {
+                $('.main-wrapper').load('/about/index.html .section--about', function() {
                     document.title = 'Sete Três — About';
                     showContent();
                     setTimeout(function() {
@@ -194,7 +194,7 @@
         var cacete = function() {
             pageTransition();
             setTimeout(function() {
-                $('.main-wrapper').load('/cacete-company .section--cacete', function() {
+                $('.main-wrapper').load('/cacete-company/index.html .section--cacete', function() {
                     document.title = 'Sete Três — Cacete Company';
                     showContent();
                     setTimeout(function() {
@@ -209,14 +209,14 @@
         var contact = function() {
             pageTransition();
             setTimeout(function() {
-                $('.main-wrapper').load('/contact .section--contact', function() {
+                $('.main-wrapper').load('/contact/index.html .section--contact', function() {
                     document.title = 'Sete Três — Contact';
                     showContent();
                     setTimeout(function() {
                         $('.section--contact').addClass('section--active');
                         $('#contact-form').on('submit', function() {
                             $.ajax({
-                                url: '//formspree.io/_@setetres.st',
+                                url: '//formspree.io/xodbpkbm',
                                 method: 'POST',
                                 data: $(this).serialize(),
                                 dataType: 'json',
@@ -239,7 +239,7 @@
         var inkstarter = function() {
             pageTransition();
             setTimeout(function() {
-                $('.main-wrapper').load('/inkstarter .section--inkstarter', function() {
+                $('.main-wrapper').load('/inkstarter/index.html .section--inkstarter', function() {
                     document.title = 'Sete Três — InkStarter';
                     showContent();
                     setTimeout(function() {
