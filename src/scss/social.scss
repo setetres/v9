@@ -1,0 +1,57 @@
+@import 'variables';
+@import 'utils';
+
+.social {
+    align-items: center;
+    color: $white;
+    display: flex;
+    height: 50vh;
+    margin: 0 ($column * 2) 0 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    z-index: 2;
+
+    @media (min-width: map-get($grid, md)) {
+        height: 100vh;
+    }
+
+    &__username {
+        @extend %large;
+        height: $line-height-social;
+        line-height: $line-height-social;
+        margin: 0 0 0 10px;
+    }
+
+    &__networks {
+        @extend %large;
+        height: $line-height-social;
+        line-height: $line-height-social;
+        overflow: hidden;
+        position: relative;
+
+        &-wrapper {
+            animation: social ($timing * 10) infinite $easing-out;
+            display: inline-block;
+            left: 0;
+            position: relative;
+            top: 0;
+            white-space: nowrap;
+
+            a {
+                color: $accent-color;
+                display: block;
+                text-decoration: none;
+                transition: color $timing $easing-out;
+                width: 100%;
+
+            }
+
+            a:hover {
+                color: $white;
+            }
+        }
+    }
+}

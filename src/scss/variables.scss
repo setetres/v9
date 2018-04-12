@@ -1,0 +1,29 @@
+$white:                  #fff !default;
+$ice:                    #edf0f2 !default;
+$black:                  #000 !default;
+
+$size:                   73px !default;
+$size-sm:                37px !default;
+
+$accent-color:           #0074d9 !default;
+$secondary-color:        #7fdbff !default;
+$success-color:          #7ed321 !default;
+
+$easing-out:             cubic-bezier(.19, 1, .22, 1) !default;
+$easing-in:              cubic-bezier(.895, .03, .685, .22) !default;
+$pulse:                  cubic-bezier(.73, 0, .175, 1) !default;
+$timing:                 500ms !default;
+$delay:                  250ms !default;
+$column:                 8.33333333333vw !default;
+
+$font-size-base:         1.2rem !default
+$line-height-big:        6.3vw !default;
+$line-height-social:     7.8vw !default;
+
+$grid: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1367px
+) !default;

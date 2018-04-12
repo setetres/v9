@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'utils';
+
+.link {
+    @extend %link;
+
+    &--large {
+        @extend %link--large;
+    }
+
+    &--small {
+        @extend %link--small;
+    }
+}

@@ -1,0 +1,141 @@
+@import 'variables';
+
+@keyframes loading {
+    0% {
+        left: 0;
+        right: auto;
+        width: 0;
+    }
+
+    49% {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+
+    50% {
+        left: auto;
+        right: 0;
+        width: 100%;
+    }
+
+    99% {
+        left: auto;
+        right: 0;
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: auto;
+        width: 0;
+    }
+}
+
+@keyframes circle-1 {
+    0% {
+        r: 18;
+    }
+
+    50% {
+        r: 48;
+    }
+
+    100% {
+        r: 18;
+    }
+}
+
+@keyframes circle-2 {
+    0% {
+        r: 18;
+    }
+
+    50% {
+        r: 38;
+    }
+
+    100% {
+        r: 18;
+    }
+}
+
+@keyframes circle-3 {
+    0% {
+        r: 18;
+    }
+
+    45% {
+        r: 28;
+    }
+
+    55% {
+        r: 28;
+    }
+
+    100% {
+        r: 18;
+    }
+}
+
+@keyframes external {
+    0% {
+        stroke-dashoffset: 156;
+        transform: rotate(70deg);
+    }
+
+    60% {
+        stroke-dashoffset: -156;
+    }
+
+    100% {
+        stroke-dashoffset: -156;
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes ribbons {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 52px 26px;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: #f00;
+    }
+
+    100% {
+        background-color: #0ff;
+    }
+}
+
+@keyframes social {
+    0%  {
+        top: 0;
+    }
+
+    15% {
+        top: -$line-height-social;
+    }
+
+    30% {
+        top: -($line-height-social * 2);
+    }
+
+    45% {
+        top: -($line-height-social * 3);
+    }
+
+    60% {
+        top: -($line-height-social * 4);
+    }
+
+    75% {
+        top: -($line-height-social * 5);
+    }
+}

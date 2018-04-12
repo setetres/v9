@@ -1,0 +1,123 @@
+doctype html
+html(lang='en', itemscope='', itemtype='http://schema.org')
+    head
+        include ../inc/meta.pug
+
+        title Sete Três — About
+        meta(name='description', content='Hello, my name is Guilherme Pangnotta. Born and raised in São Paulo now living in Belo Horizonte, Brazil. Currently working as Product Designer at Hotmart, Tattoo Artist at InkStarter and also a member of the Awwwards Jury.')
+        link(rel='canonical', href='https://setetres.st/about')
+
+        meta(property='og:type', content='website')
+        meta(property='og:title', content='Sete Três — About')
+        meta(property='og:description', content='Hello, my name is Guilherme Pangnotta. Born and raised in São Paulo now living in Belo Horizonte, Brazil. Currently working as Product Designer at Hotmart, Tattoo Artist at InkStarter and also a member of the Awwwards Jury.')
+        meta(property='og:image', content='https://setetres.st/img/share-about.png')
+        meta(property='og:url', content='https://setetres.st/about')
+
+        meta(itemprop='name', content='Sete Três — About')
+        meta(itemprop='description', content='Hello, my name is Guilherme Pangnotta. Born and raised in São Paulo now living in Belo Horizonte, Brazil. Currently working as Product Designer at Hotmart, Tattoo Artist at InkStarter and also a member of the Awwwards Jury.')
+        meta(itemprop='image', content='https://setetres.st/img/share-about.png')
+        meta(itemprop='url', content='https://setetres.st/about')
+
+        meta(name='twitter:card', content='summary')
+        meta(name='twitter:title', content='Sete Três — About')
+        meta(name='twitter:description', content='Hello, my name is Guilherme Pangnotta. Born and raised in São Paulo now living in Belo Horizonte, Brazil. Currently working as Product Designer at Hotmart, Tattoo Artist at InkStarter and also a member of the Awwwards Jury.')
+        meta(name='twitter:image', content='https://setetres.st/img/share-about.png')
+    body.body.body--loading
+        include ../inc/progress.pug
+        include ../inc/header.pug
+        include ../inc/navigation.pug
+        main#main.main
+            .main-wrapper
+                section.section.section--about
+                    h2.section__content-subtitle
+                        span About
+                    .section__content
+                        p.section__content-title(tabindex='1')
+                            | Hello, my name is Guilherme Pangnotta.
+                        p.section__content-title(tabindex='2')
+                            | Born and raised in São Paulo now living in Belo Horizonte, Brazil. <span>🇧🇷</span>
+                        p.section__content-title(tabindex='3')
+                            | Currently working as a Product Designer <span>👨🏻‍💻</span> at
+                            |
+                            a.link.link--large(href='http://hotmart.com', target='_blank', rel='noopener', tabindex='4') Hotmart
+                            |, Tattoo Artist <span>💉</span> at
+                            |
+                            a.link.link--large(href='http://inkstarter.cc', target='_blank', rel='noopener', tabindex='5') InkStarter
+                            |
+                            | and also a member of the
+                            |
+                            a.link.link--large(href='http://awwwards.com', target='_blank', rel='noopener', tabindex='6') Awwwards
+                            |
+                            |
+                            <span>🏆</span> Jury.
+                        ul.section__content-details.section__content-details--summary(tabindex='7')
+                            li
+                                .section__content-details-small Sign
+                                .section__content-details-normal
+                                    span Sagittarius
+                            li
+                                .section__content-details-small Family
+                                .section__content-details-normal
+                                    span Sofia ♥/
+                                    span 2 dogs /
+                                    span 3 cats
+                            li
+                                .section__content-details-small Blood type
+                                .section__content-details-normal
+                                    span O+
+                            li
+                                .section__content-details-small Tattoos
+                                .section__content-details-normal
+                                    span 44 and counting
+                        p(tabindex='8')
+                            | Commonly known as <strong>Pang</strong>, Sete Três or 73, but I prefer <i>&lt;div&gt;</i> Dementor. An <i>AnimationWithEase()</i> Evangelist. A Savage Entrepre<i>not</i>.
+                        p(tabindex='9')
+                            | Graduated in Advertising, with over 10 years experience in digital marketing, web design, and development. During this time I had the privilege to work with brands such as
+                            |
+                            a.link.link--small(href='http://petrobras.com.br', target='_blank', rel='noopener', tabindex='10') Petrobras
+                            |,
+                            |
+                            a.link.link--small(href='http://fiat.com.br', target='_blank', rel='noopener', tabindex='11') Fiat
+                            |,
+                            |
+                            a.link.link--small(href='http://citi.com', target='_blank', rel='noopener', tabindex='12') Citi
+                            |,
+                            |
+                            a.link.link--small(href='http://vale.com', target='_blank', rel='noopener', tabindex='13') Vale
+                            |,
+                            |
+                            a.link.link--small(href='http://hyundai.com.br', target='_blank', rel='noopener', tabindex='14') Hyundai
+                            |,
+                            |
+                            a.link.link--small(href='http://lg.com', target='_blank', rel='noopener', tabindex='15') LG
+                            |,
+                            |
+                            a.link.link--small(href='http://tim.com.br', target='_blank', rel='noopener', tabindex='16') Tim
+                            |,
+                            | and
+                            |
+                            a.link.link--small(href='http://vivo.com.br', target='_blank', rel='noopener', tabindex='17') Vivo.
+                        p(tabindex='18')
+                            | With self-taught development background and a desire to create new experiences and interactions, the only way possible for me after hundreds of thousands of lines was to focus on Digital Product Design. I just love the whole process of buildings things from scratch. Everything coming to life, from the problem to delivery and the post analysis of the results.
+                        p(tabindex='19')
+                            | A friend once told me that Brazilians have a weird father-son relationship with projects they work on. "Finally my baby is born". Can anyone relate to this? I just needed to point that. Shout out to all the parents!
+                        p(tabindex='20')
+                            | If you want to know more about me, the name of my dogs, what kind of seasoning I use on my beans or just to say hi, you can
+                            |
+                            a.link.link--small(href='/contact', tabindex='21') drop me a line
+                            |.
+                        .section__content-footer(tabindex='22')
+                            .section__content-footer-image(style='background-image: url(/img/about-01.jpg)')
+                            .social
+                                .social__networks
+                                    .social__networks-wrapper
+                                        a(href='http://facebook.com/setetres', target='_blank', rel='noopener') facebook
+                                        a(href='http://github.com/setetres', target='_blank', rel='noopener') github
+                                        a(href='http://instagram.com/setetres', target='_blank', rel='noopener') instagram
+                                        a(href='http://linkedin.com/in/setetres', target='_blank', rel='noopener') linkedin
+                                        a(href='http://medium.com/@setetres', target='_blank', rel='noopener')  medium
+                                        a(href='http://twitter.com/setetres', target='_blank', rel='noopener')  twitter
+                                .social__username
+                                    | /setetres
+        include ../inc/stripe.pug
+        include ../inc/scripts.pug

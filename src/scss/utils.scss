@@ -1,0 +1,92 @@
+// sass-lint:disable no-url-domains, no-url-protocols
+
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto');
+
+// sass-lint:enable no-url-domains, no-url-protocols
+
+%large {
+    font-family: 'Playfair Display', serif;
+    font-size: $line-height-big;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: $line-height-big;
+
+    @media (min-width: map-get($grid, md)) {
+        letter-spacing: -3px;
+    }
+}
+
+%small {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 12px;
+    text-transform: uppercase;
+}
+
+%link {
+    color: $accent-color;
+    position: relative;
+    text-decoration: none;
+
+    &::selection {
+        background-color: transparent;
+        color: $accent-color;
+    }
+
+    &::before {
+        background-color: $accent-color;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: auto;
+        top: auto;
+        transition: left 0ms $easing-out $timing, right 0ms $easing-out $timing, width $timing $easing-out;
+        width: 100%;
+    }
+
+    &:hover {
+        &::before {
+            left: auto;
+            right: 0;
+            top: auto;
+            width: 0;
+        }
+    }
+
+    &:focus {
+        color: $secondary-color;
+
+        &::before {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+%link--large {
+    &::before {
+        bottom: 0;
+        height: 2px;
+
+        @media (min-width: map-get($grid, md)) {
+            bottom: .5vw;
+            height: 3px;
+        }
+    }
+}
+
+%link--small {
+    &::before {
+        bottom: -3px;
+        height: 1px;
+    }
+}
+
+
+%pattern {
+    background-attachment: fixed;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%230074d9" fill-opacity="1" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: repeat;
+    background-size: 4px 4px;
+}

@@ -1,0 +1,93 @@
+@import 'variables';
+
+.wrapper {
+    pointer-events: none;
+    position: absolute;
+
+    &::before,
+    &::after {
+        background-color: $black;
+        content: '';
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        transition: background-color $timing $easing-out, height $timing $easing-out, width $timing $easing-out;
+    }
+
+    &--x,
+    &--y {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &--x {
+        &::before,
+        &::after {
+            height: 100%;
+            width: 2px;
+
+            @media (min-width: map-get($grid, md)) {
+                width: 3px;
+            }
+        }
+
+        &::before {
+            bottom: 0;
+            left: 0;
+            transition-delay: ($delay * 3) + 150;
+        }
+
+        &::after {
+            right: 0;
+            top: 0;
+            transition-delay: $delay + 150;
+        }
+    }
+
+    &--y {
+        &::before,
+        &::after {
+            height: 2px;
+            width: 100%;
+
+            @media (min-width: map-get($grid, md)) {
+                height: 3px;
+            }
+        }
+
+        &::before {
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            transition-delay: ($delay * 2) + 150;
+        }
+    }
+
+    &--loading {
+        &::before,
+        &::after {
+            background-color: transparent;
+            transition-delay: 0ms;
+        }
+
+        &.wrapper--x {
+            &::before,
+            &::after {
+                height: 0;
+            }
+        }
+
+        .wrapper--y {
+            &::before,
+            &::after {
+                width: 0;
+            }
+        }
+    }
+}

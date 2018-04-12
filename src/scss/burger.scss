@@ -1,0 +1,188 @@
+@import 'variables';
+
+.line {
+    align-items: center;
+    bottom: 10px;
+    display: flex;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    @media (min-width: map-get($grid, md)) {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        top: 20px;
+    }
+
+    span {
+        background-color: $black;
+        height: 2px;
+        left: 0;
+        margin-top: -1px;
+        position: absolute;
+        top: 50%;
+        transition: background-color $timing $easing-out;
+        width: 100%;
+
+        @media (min-width: map-get($grid, md)) {
+            height: 3px;
+        }
+
+        &::before,
+        &::after {
+            background-color: $black;
+            content: '';
+            display: block;
+            height: 2px;
+            position: relative;
+            transition: background-color $timing $easing-out, width $timing $easing-out ($delay * 4), transform ($timing * 2) $easing-out;
+            width: 100%;
+
+            @media (min-width: map-get($grid, md)) {
+                height: 3px;
+            }
+        }
+
+        &::before {
+            float: right;
+            margin-top: -5px;
+            transform-origin: top left;
+
+            @media (min-width: map-get($grid, md)) {
+                margin-top: -10px;
+            }
+        }
+
+        &::after {
+            float: left;
+            margin-top: 5px;
+            transform-origin: bottom left;
+
+            @media (min-width: map-get($grid, md)) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &--loading {
+        span {
+            animation: loading ($timing * 2) $easing-out infinite;
+            width: 0;
+
+            &::before,
+            &::after {
+                transition: width $timing $easing-out 0ms;
+                width: 0;
+            }
+        }
+    }
+}
+
+.burger {
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba($secondary-color, 0);
+    clear: both;
+    color: $accent-color;
+    display: block;
+    height: $size-sm ;
+    margin: 0 calc(16.6666667vw - 18px);
+    pointer-events: none;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-indent: -999999px;
+    top: -1px;
+    transition: width ($timing * 3) $easing-out, box-shadow $timing $easing-out;
+    width: 100%;
+
+    @media (min-width: map-get($grid, md)) {
+        height: $size;
+        margin: 0 calc(8.33333333333vw - 37px);
+    }
+
+    &--loading {
+        margin: 0 calc(16.6666667vw - 18px);
+        pointer-events: none;
+
+        @media (min-width: map-get($grid, md)) {
+            margin: 0 calc(8.33333333333vw - 37px);
+        }
+    }
+
+    &--ready {
+        pointer-events: all;
+        width: $size-sm;
+
+        @media (min-width: map-get($grid, md)) {
+            width: $size;
+        }
+
+        .wrapper {
+            &::before,
+            &::after {
+                background-color: transparent;
+                transition-delay: 0ms;
+            }
+        }
+
+        .line span {
+            &::before,
+            &::after {
+                transition-delay: 0ms;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            .line span {
+                background-color: $secondary-color;
+                transition-delay: 0ms;
+
+                &::before,
+                &::after {
+                    background-color: $secondary-color;
+                    transition-delay: 0ms;
+                }
+
+                &::after {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    &--active {
+        .line span {
+            background-color: transparent;
+
+            &::before {
+                transform: translateY(0) translateX(2px) rotate(45deg);
+
+                @media (min-width: map-get($grid, md)) {
+                    transform: translateY(-1px) translateX(6px) rotate(45deg);
+                }
+            }
+
+            &::after {
+                transform: translateY(2px) translateX(2px) rotate(-45deg);
+
+                @media (min-width: map-get($grid, md)) {
+                    transform: translateY(2px) translateX(6px) rotate(-45deg);
+                }
+            }
+        }
+
+        &:hover,
+        &:focus {
+            .line span {
+                background-color: transparent;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

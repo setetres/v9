@@ -1,0 +1,83 @@
+@import 'variables';
+
+.pulse {
+    background-color: $white;
+    border-radius: 100%;
+    display: block;
+    height: $size-sm;
+    left: 0;
+    margin: 0 auto;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: $size-sm;
+
+    @media (min-width: map-get($grid, md)) {
+        height: $size;
+        width: $size;
+    }
+
+    svg {
+        left: -81px;
+        pointer-events: none;
+        position: absolute;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        top: -81px;
+        transform: scale(.5);
+
+        @media (min-width: map-get($grid, md)) {
+            left: -63px;
+            top: -63px;
+            transform: scale(1);
+        }
+    }
+
+    &__circle {
+        fill: rgba($secondary-color, .05);
+        opacity: 0;
+        r: 17;
+        transform-origin: 50% 50%;
+        transition: opacity ($timing * 3) $easing-out 0ms;
+
+        &--one {
+            animation-name: circle-1;
+        }
+
+        &--two {
+            animation-delay: 100ms;
+            animation-name: circle-2;
+        }
+
+        &--three {
+            animation-delay: 200ms;
+            animation-name: circle-3;
+        }
+    }
+
+    &__loader {
+        animation: none;
+        fill: none;
+        opacity: 0;
+        r: 17;
+        stroke: $secondary-color;
+        stroke-dasharray: 156;
+        stroke-dashoffset: 0;
+        transform-origin: 50% 50%;
+
+        &--active {
+            animation: external ($timing * 2) linear infinite;
+            opacity: 1;
+        }
+    }
+
+    &--ready {
+        .pulse__circle {
+            animation-duration: $timing * 4;
+            animation-iteration-count: infinite;
+            animation-timing-function: pulse;
+            opacity: 1;
+            transition: opacity ($timing * 3) $easing-out ($delay * 2.5);
+        }
+    }
+}

@@ -1,0 +1,242 @@
+@import 'variables';
+@import 'utils';
+
+.section__content-image {
+    box-shadow: 0 0 0 0 rgba($secondary-color, 0);
+    display: block;
+    margin-bottom: $column;
+    margin-top: $column;
+    outline: 0 none;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow $timing $easing-out;
+
+    img {
+        display: block;
+        height: auto;
+        margin-bottom: 0;
+        opacity: 0;
+        transition: opacity ($timing * 2) $easing-out, filter ($timing * 2) $easing-out;
+        width: 100%;
+
+        &.b-loaded {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: map-get($grid, md)) {
+        height: auto;
+        margin-bottom: $column * 2;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: $column * 2;
+        width: 100vw;
+    }
+
+    &::before {
+        @extend %pattern;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 30px rgba($secondary-color, .15);
+    }
+
+    &--full {
+        background-position: center center;
+        background-size: cover;
+        height: auto;
+        width: 100vw;
+    }
+
+    &--center {
+        margin-left: $column * 2;
+        width: $column * 8;
+    }
+
+    &--half-right {
+        margin-left: $column * 4;
+        width: $column * 6;
+    }
+
+    &--half-left {
+        margin-left: $column * 2;
+        width: $column * 6;
+    }
+
+    &--left {
+        width: $column * 10;
+    }
+
+    &--right {
+        margin-left: $column * 2;
+        width: $column * 10;
+    }
+
+    &--winners {
+        .section__content-image-load {
+            float: left;
+            height: auto;
+            width: calc(100% / 4);
+
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3) {
+                width: calc(100% / 3);
+            }
+
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6),
+            &:last-child {
+                width: 25%;
+            }
+        }
+    }
+
+    &-label {
+        padding-left: 50%;
+        position: absolute;
+        z-index: 2;
+
+        div {
+            height: $line-height-big + .5vw;
+            margin: -1vw 0;
+            overflow: hidden;
+            position: relative;
+
+            > span {
+                @extend %large;
+                overflow: hidden;
+                position: relative;
+            }
+
+            > span > span {
+                position: relative;
+                top: $line-height-big;
+                transition: top $timing $easing-in;
+            }
+        }
+
+        div:first-child > span:first-child > span {
+            transition-delay: $delay;
+        }
+
+        div:first-child > span:last-child > span {
+            transition-delay: $delay / 2;
+        }
+
+        div:last-child > span > span {
+            transition-delay: 0ms;
+        }
+    }
+
+    &-arrow {
+        background-color: $accent-color;
+        border-radius: 50%;
+        color: $white;
+        font-size: .9rem;
+        font-weight: 700;
+        height: $size-sm;
+        line-height: $size-sm;
+        overflow: hidden;
+        position: absolute;
+        right: $column;
+        text-align: center;
+        top: $column;
+        transition: color $timing $easing-out, background-color $timing $easing-out;
+        width: $size-sm;
+        z-index: 2;
+
+        @media (min-width: map-get($grid, md)) {
+            font-size: $font-size-base;
+            height: $size;
+            line-height: $size;
+            right: (($column / 2) / 2);
+            top: (($column / 2) / 2);
+            width: $size;
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            right: 0;
+            transition: right $timing $easing-out;
+            width: $size-sm;
+
+            @media (min-width: map-get($grid, md)) {
+                width: $size;
+            }
+
+            &:last-child {
+                position: absolute;
+                right: -$size-sm;
+                top: 0;
+
+                @media (min-width: map-get($grid, md)) {
+                    right: -$size;
+                }
+            }
+        }
+    }
+
+    &--goto {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+            filter: grayscale(100%) brightness(80%) contrast(130%);
+        }
+
+        &:hover,
+        &:focus {
+            img {
+                filter: grayscale(0%) brightness(100%) contrast(100%);
+            }
+
+            .section__content-image-arrow {
+                background-color: $secondary-color;
+                color: $accent-color;
+
+                span {
+                    right: $size;
+
+                    &:last-child {
+                        right: 0;
+                    }
+                }
+            }
+
+            .section__content-image-label {
+                div > span > span {
+                    top: 0;
+                    transition: top $timing $easing-out;
+                }
+
+                div:first-child > span:first-child > span {
+                    transition-delay: 0ms;
+                }
+
+                div:first-child > span:last-child > span {
+                    transition-delay: $delay / 2;
+                }
+
+                div:last-child > span > span {
+                    transition-delay: $delay;
+                }
+            }
+        }
+    }
+}

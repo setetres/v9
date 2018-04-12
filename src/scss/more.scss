@@ -1,0 +1,110 @@
+@import 'variables';
+@import 'utils';
+
+.section__more {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 25vh;
+    min-height: 75vh;
+
+    @media (min-width: map-get($grid, md)) {
+        flex-flow: row wrap;
+        min-height: 50vh;
+    }
+
+    &-image {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: grayscale(100%) brightness(80%) contrast(130%);
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transition: filter ($timing * 2) $easing-out;
+
+        video {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &-details {
+        position: relative;
+        text-align: left;
+        z-index: 2;
+
+        span {
+            display: inline-block;
+            line-height: 1.3rem;
+            margin-right: 5px;
+            position: relative;
+
+            &::before {
+                background-color: $white;
+                bottom: 0;
+                content: '';
+                left: 0;
+                pointer-events: none;
+                position: absolute;
+                right: auto;
+                top: 0;
+                transition: left 0ms $easing-out $timing, right 0ms $easing-out $timing, width $timing $easing-out;
+                width: 100%;
+            }
+        }
+    }
+
+    &-prev,
+    &-next {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        height: 37.5vh;
+        justify-content: center;
+        padding: 0 ($column * 2);
+        position: relative;
+        text-decoration: none;
+
+        @media (min-width: map-get($grid, md)) {
+            height: 50vh;
+            padding: 0 $column;
+            width: 50%;
+        }
+
+        &::before {
+            @extend %pattern;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        > span {
+            @extend %large;
+            z-index: 2;
+        }
+
+        &:hover,
+        &:focus {
+            .section__more-image {
+                filter: grayscale(0%) brightness(100%) contrast(100%);
+            }
+
+            .section__more-details span {
+                &::before {
+                    left: auto;
+                    right: 0;
+                    width: 0;
+                }
+            }
+        }
+    }
+}

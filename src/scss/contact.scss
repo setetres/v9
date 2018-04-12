@@ -1,0 +1,176 @@
+@import 'variables';
+
+.contact-form {
+    display: block;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &__input,
+    &__button {
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+        font-size: $font-size-base;
+        line-height: $column;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        transform: rotate(-90deg) translateX(20px);
+        transform-origin: bottom left;
+
+        &:focus {
+            font-size: 30px;
+        }
+    }
+
+    &__input {
+        background-color: transparent;
+        bottom: 50vh;
+        color: $black;
+        cursor: vertical-text;
+        height: $column * 2;
+        width: 50vh;
+
+        @media (min-width: map-get($grid, md)) {
+            bottom: 0;
+            height: $column;
+            width: 100vh;
+        }
+
+        &:first-child {
+            left: $column * 6;
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out $delay + ($delay / 2), transform $timing $easing-out $delay + ($delay / 2);
+
+            @media (min-width: map-get($grid, md)) {
+                left: $column * 4;
+            }
+        }
+
+        &:nth-child(2) {
+            left: $column * 8;
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out $delay, transform $timing $easing-out $delay;
+
+            @media (min-width: map-get($grid, md)) {
+                left: $column * 5;
+            }
+        }
+
+        &:nth-child(3) {
+            left: $column * 10;
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out ($delay / 2), transform $timing $easing-out ($delay / 2);
+
+            @media (min-width: map-get($grid, md)) {
+                left: $column * 6;
+            }
+        }
+    }
+
+    &__button {
+        background-color: $accent-color;
+        bottom: 0;
+        color: $white;
+        cursor: pointer;
+        font-weight: 700;
+        height: 100vw;
+        left: 100vw;
+        transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out 0ms, transform $timing $easing-out 0ms;
+        width: 50vh;
+
+        i {
+            display: none;
+            font-size: 100px;
+        }
+
+        @media (min-width: map-get($grid, md)) {
+            height: 50vw;
+            width: 100vh;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: $secondary-color;
+            color: $accent-color;
+        }
+    }
+
+    &--active {
+        .contact-form__button {
+            animation: rainbow .1ms infinite;
+            pointer-events: none;
+
+            i {
+                display: inline-block;
+            }
+        }
+
+        .contact-form__button span {
+            display: none;
+        }
+    }
+}
+
+.section--contact {
+    min-height: 100vh;
+}
+
+.section--contact.section--active {
+    .contact-form__input,
+    .contact-form__button {
+        opacity: 1;
+        transform: rotate(-90deg) translateX(0);
+    }
+
+    .contact-form__input {
+        &:first-child {
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out 0ms, transform $timing $easing-out 0ms;
+        }
+
+        &:nth-child(2) {
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out ($delay / 2), transform $timing $easing-out ($delay / 2);
+        }
+
+        &:nth-child(3) {
+            transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out $delay, transform $timing $easing-out $delay;
+        }
+    }
+
+    .contact-form__button {
+        transition: background-color $timing $easing-out, color $timing $easing-out, font-size $timing $easing-out, opacity $timing $easing-out $delay + ($delay / 2), transform $timing $easing-out $delay + ($delay / 2);
+    }
+}
+
+.giphy {
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: opacity $timing $easing-out;
+    width: 100vw;
+    z-index: 1000;
+
+    @media (min-width: map-get($grid, md)) {
+        height: 100vh;
+        width: 50vw;
+    }
+
+    &::before {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="32" viewBox="0 0 16 32"%3E%3Cg fill="%230074d9" fill-opacity="0.5"%3E%3Cpath fill-rule="evenodd" d="M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z"/%3E%3C/g%3E%3C/svg%3E');
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+
+    &--active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

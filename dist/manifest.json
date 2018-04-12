@@ -1,0 +1,15 @@
+{
+    "background_color": "#ffffff",
+    "name": "Sete Três",
+    "description": "Hello, my name is Guilherme Pangnotta. Born and raised in São Paulo now living in Belo Horizonte, Brazil. Currently working as Product Designer at Hotmart, Tattoo Artist at InkStarter and also a member of the Awwwards Jury.",
+    "display": "standalone",
+    "icons": [{
+        "src": "/img/icon-512x512.png",
+        "sizes": "512x512"
+    }],
+    "start_url": "/",
+    "orientation": "portrait-primary",
+    "short_name": "Sete Três",
+    "theme_color": "#0074d9",
+    "version": "1.0.0"
+}

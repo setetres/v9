@@ -1,0 +1,14 @@
+header.header
+    a.burger.burger--loading(href='/', tabindex='0')
+        | Menu
+        .pulse(aria-hidden='true')
+            svg(width='200', viewbox='0 0 100 100')
+                circle.pulse__circle.pulse__circle--one(cx='50', cy='50', r='17')
+                circle.pulse__circle.pulse__circle--two(cx='50', cy='50', r='17')
+                circle.pulse__circle.pulse__circle--three(cx='50', cy='50', r='17')
+                circle.pulse__loader(cx='50', cy='50', r='17')
+        .wrapper.wrapper--x.wrapper--loading
+            .wrapper.wrapper--y
+        .line.line--loading
+            span
+    h1.header__title Sete Três

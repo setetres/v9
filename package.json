@@ -1,0 +1,44 @@
+{
+    "name": "setetres-v9",
+    "version": "1.0.0",
+    "description": "v9.0 of my website.",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "gulp default && gulp watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.org/setetres/setetres-v9"
+    },
+    "author": {
+        "name": "Guilherme Pangnotta",
+        "url": "http://setetres.st"
+    },
+    "license": "CC-BY-4.0",
+    "homepage": "http://setetres.st",
+    "devDependencies": {
+        "autoprefixer": "8.2.0",
+        "browser-sync": "2.23.6",
+        "del": "3.0.0",
+        "glob": "7.1.2",
+        "gulp": "3.9.1",
+        "gulp-cache": "1.0.2",
+        "gulp-clean-css": "3.9.3",
+        "gulp-concat": "2.6.1",
+        "gulp-eslint": "4.0.2",
+        "gulp-htmlmin": "4.0.0",
+        "gulp-imagemin": "4.1.0",
+        "gulp-merge-media-queries": "0.2.1",
+        "gulp-plumber": "1.2.0",
+        "gulp-postcss": "7.0.1",
+        "gulp-pug": "4.0.1",
+        "gulp-sass": "4.0.1",
+        "gulp-sass-lint": "1.3.4",
+        "gulp-uglify": "3.0.0",
+        "gulp-util": "3.0.8",
+        "run-sequence": "2.2.1",
+        "through2": "2.0.3"
+    },
+    "sasslintConfig": ".sass-lint.yml",
+    "false": {}
+}

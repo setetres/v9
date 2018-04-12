@@ -1,0 +1,185 @@
+@import 'variables';
+
+.stripe,
+.stripe::before,
+.stripe::after {
+    background-color: $white;
+    border-right: 1px solid rgba($black, .1);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 0;
+    position: fixed;
+    transition: height ($timing * 2) $easing-in;
+    width: $column * 2;
+
+    @media (min-width: map-get($grid, md)) {
+        width: $column;
+    }
+}
+
+.stripe--active,
+.stripe--active::before,
+.stripe--active::after {
+    height: 100%;
+    transition: height ($timing * 2) $easing-out;
+}
+
+.stripe--one {
+    left: 0;
+    transition-delay: $delay * 2;
+    z-index: 10;
+
+    @media (min-width: map-get($grid, md)) {
+        transition-delay: ($delay * 5) + ($delay / 2);
+    }
+
+    &::before {
+        left: $column * 2;
+        transition-delay: $delay + ($delay / 2);
+        z-index: 2;
+
+        @media (min-width: map-get($grid, md)) {
+            left: $column;
+            transition-delay: $delay * 5;
+        }
+    }
+
+    &::after {
+        left: $column * 4;
+        transition-delay: $delay;
+        z-index: 1;
+
+        @media (min-width: map-get($grid, md)) {
+            left: $column * 2;
+            transition-delay: ($delay * 4) + ($delay / 2);
+        }
+    }
+}
+
+.stripe--two {
+    left: $column * 6;
+    transition-delay: $delay / 2;
+    z-index: 9;
+
+    @media (min-width: map-get($grid, md)) {
+        left: $column * 3;
+        transition-delay: $delay * 4;
+    }
+
+    &::before {
+        left: $column * 8;
+        transition-delay: 0ms;
+        z-index: 2;
+
+        @media (min-width: map-get($grid, md)) {
+            left: $column * 4;
+            transition-delay: ($delay * 3) + ($delay / 2);
+        }
+    }
+
+    &::after {
+        display: none;
+
+        @media (min-width: map-get($grid, md)) {
+            display: block;
+            left: $column * 5;
+            transition-delay: $delay * 3;
+            z-index: 1;
+        }
+    }
+}
+
+.stripe--three {
+    display: none;
+
+    @media (min-width: map-get($grid, md)) {
+        display: block;
+        left: $column * 6;
+        transition-delay: ($delay * 2) + ($delay / 2);
+        z-index: 8;
+    }
+
+    &::before {
+        left: $column * 7;
+        transition-delay: $delay * 2;
+        z-index: 2;
+    }
+
+    &::after {
+        left: $column * 8;
+        transition-delay: $delay + ($delay / 2);
+        z-index: 1;
+    }
+}
+
+.stripe--four {
+    display: none;
+
+    @media (min-width: map-get($grid, md)) {
+        display: block;
+        left: $column * 9;
+        transition-delay: $delay;
+        z-index: 7;
+    }
+
+    &::before {
+        left: $column * 10;
+        transition-delay: 0ms;
+        z-index: 1;
+    }
+
+    &::after {
+        display: none;
+    }
+}
+
+.stripe--active {
+    &.stripe--one {
+        transition-delay: 0ms;
+
+        &::before {
+            transition-delay: $delay / 2;
+        }
+
+        &::after {
+            transition-delay: $delay;
+        }
+    }
+
+    &.stripe--two {
+        transition-delay: $delay + ($delay / 2);
+
+        &::before {
+            transition-delay: $delay * 2;
+        }
+
+        &::after {
+            transition-delay: ($delay * 2) + ($delay / 2);
+        }
+    }
+
+    &.stripe--three {
+        @media (min-width: map-get($grid, md)) {
+            transition-delay: $delay * 3;
+        }
+
+        &::before {
+            transition-delay: ($delay * 3) + ($delay / 2);
+        }
+
+        &::after {
+            transition-delay: $delay * 4;
+        }
+    }
+
+    &.stripe--four {
+        @media (min-width: map-get($grid, md)) {
+            transition-delay: ($delay * 4) + ($delay / 2);
+        }
+
+        &::before {
+            transition-delay: $delay * 5;
+        }
+    }
+}
