@@ -147,23 +147,6 @@
             $('.pulse__loader').removeClass('pulse__loader--active');
         };
 
-        // Route: index
-
-        // var index = function() {
-        //     $('.section').removeClass('section--active');
-        //     setTimeout(function() {
-        //         $('html, body').animate({scrollTop: 0}, 0);
-        //     }, 1000);
-        //     setTimeout(function() {
-        //         $('.main-wrapper').load('/index.html .section--home', function() {
-        //             document.title = 'Sete Três';
-        //             setTimeout(function() {
-        //                 $('.section--home').addClass('section--active');
-        //             }, 500);
-        //         });
-        //     }, 500);
-        // };
-
         // Route: about
 
         var about = function() {
