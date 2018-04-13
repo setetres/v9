@@ -160,8 +160,7 @@
         // Route: about
 
         var about = function() {
-            $('.body').removeClass('body--loading');
-            $('.body').addClass('body--active');
+            pageLoaded();
             pageTransition();
             setTimeout(function() {
                 $('.main-wrapper').load('/about/index.html .section--about', function() {
@@ -177,8 +176,7 @@
         // Route: archive
 
         var archive = function() {
-            $('.body').removeClass('body--loading');
-            $('.body').addClass('body--active');
+            pageLoaded();
             pageTransition();
             setTimeout(function() {
                 $('.main-wrapper').load('/archive/index.html .setetres--archive', function() {
@@ -194,8 +192,7 @@
         // Route: cacete company
 
         var cacete = function() {
-            $('.body').removeClass('body--loading');
-            $('.body').addClass('body--active');
+            pageLoaded();
             pageTransition();
             setTimeout(function() {
                 $('.main-wrapper').load('/cacete-company/index.html .section--cacete', function() {
@@ -211,8 +208,7 @@
         // Route: contact
 
         var contact = function() {
-            $('.body').removeClass('body--loading');
-            $('.body').addClass('body--active');
+            pageLoaded();
             pageTransition();
             setTimeout(function() {
                 $('.main-wrapper').load('/contact/index.html .section--contact', function() {
@@ -243,8 +239,7 @@
         // Route: inkstarter
 
         var inkstarter = function() {
-            $('.body').removeClass('body--loading');
-            $('.body').addClass('body--active');
+            pageLoaded();
             pageTransition();
             setTimeout(function() {
                 $('.main-wrapper').load('/inkstarter/index.html .section--inkstarter', function() {
