@@ -244,10 +244,10 @@
         page('/cacete-company/', cacete);
         page('/contact/', contact);
         page('/inkstarter/', inkstarter);
-        page();
 
         $(window).on('load', function() {
             pageLoaded();
+            page();
         });
 
         $(window).on('debouncedresize', function(){
