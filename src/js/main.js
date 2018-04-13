@@ -117,6 +117,7 @@
         // Open navigation
 
         var openNavigation = function() {
+            $('.navigation').css({visibility: 'visible'});
             $('.burger').addClass('burger--active');
             $('.header__title').addClass('header__title--active');
             $('.section--home').removeClass('section--active');
@@ -134,6 +135,9 @@
             $('.header__title').removeClass('header__title--active');
             $('.navigation').removeClass('navigation--active');
             $('.progress__bar').css({width: 0});
+            setTimeout(function() {
+                $('.navigation').css({visibility: 'hidden'});
+            }, 1250);
         };
 
         // Show content

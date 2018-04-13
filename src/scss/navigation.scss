@@ -10,6 +10,7 @@
     pointer-events: none;
     position: fixed;
     top: 0;
+    visibility: hidden;
     width: $column * 8;
     z-index: 30;
 
@@ -23,8 +24,6 @@
         overflow: hidden;
         padding: 0;
         position: relative;
-        // transition: visibilty 0ms $easing-out $delay + ($delay / 2);
-        // visibility: hidden;
     }
 
     &__menu--large {
@@ -86,10 +85,6 @@
 
     &--active {
         pointer-events: all;
-
-        // .navigation__menu {
-        //     visibility: visible;
-        // }
 
         .navigation__menu--large li {
             transform: translateX(0);
