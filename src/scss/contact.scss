@@ -93,6 +93,11 @@
             background-color: $secondary-color;
             color: $accent-color;
         }
+
+        &:disabled {
+            color: transparent;
+            pointer-events: none;
+        }
     }
 
     &--active {

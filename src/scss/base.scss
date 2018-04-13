@@ -11,6 +11,9 @@ button {
     &:hover,
     &:active,
     &:focus {
+        // sass-lint:disable no-vendor-prefixes
+        -webkit-tap-highlight-color: rgba($black, 0);
+        // sass-lint:enable no-vendor-prefixes
         outline: 0 none;
     }
 }

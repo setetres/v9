@@ -9,18 +9,23 @@
 
     p {
         box-shadow: 0 0 0 0 rgba($secondary-color, 0);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         margin-left: $column * 2;
         margin-top: 0;
         transition: background-color $timing $easing-out, box-shadow $timing $easing-out;
         width: $column * 8;
 
         @media (min-width: map-get($grid, md)) {
+            margin-bottom: 2rem;
             width: $column * 5;
         }
 
         &:last-child {
             margin-bottom: 0;
+
+            @media (min-width: map-get($grid, md)) {
+                margin-bottom: 0;
+            }
         }
 
         &:focus {
@@ -55,7 +60,6 @@
         &.section__content-title {
             @extend %large;
             line-height: $line-height-big + .5vw;
-            margin-bottom: 3rem;
             width: $column * 8;
         }
     }
@@ -114,7 +118,7 @@
     &-details {
         box-shadow: 0 0 0 0 rgba($secondary-color, 0);
         list-style-type: none;
-        margin: ($column / 2) ($column * 2) $column;
+        margin: $column ($column * 2);
         padding: 0;
         transition: background-color $timing $easing-out, box-shadow $timing $easing-out;
         width: $column * 8;
@@ -190,6 +194,8 @@
         }
 
         &--summary {
+            margin: ($column / 2) ($column * 2) $column;
+
             &:hover {
                 background-color: rgba($secondary-color, .15);
                 box-shadow: 0 0 0 30px rgba($secondary-color, .15);
