@@ -151,6 +151,12 @@
             $('.pulse__loader').removeClass('pulse__loader--active');
         };
 
+        // Route: index
+
+        var index = function() {
+            pageLoaded();
+        };
+
         // Route: about
 
         var about = function() {
@@ -243,15 +249,16 @@
 
         // Routes
 
+        page('/', index);
         page('/about/', about);
         page('/archive/', archive);
         page('/cacete-company/', cacete);
         page('/contact/', contact);
         page('/inkstarter/', inkstarter);
+        page();
 
         $(window).on('load', function() {
             pageLoaded();
-            page();
         });
 
         $(window).on('debouncedresize', function(){
