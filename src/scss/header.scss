@@ -22,9 +22,9 @@
         background-color: $black;
         color: $white;
         display: block;
-        left: -100%;
+        left: 0;
         margin: -1px 0 0;
-        opacity: 1;
+        opacity: 0;
         padding: 5px 10px 6px;
         pointer-events: none;
         position: absolute;
@@ -32,7 +32,6 @@
         transition: left ($timing * 4) $easing-in ($delay * 3);
 
         &--active {
-            left: 0;
             transition: left ($timing * 4) $easing-out ($delay * 3);
         }
     }
