@@ -91,6 +91,7 @@
         function pageLoaded() {
             $('.body').removeClass('body--loading');
             $('.body').addClass('body--active');
+            $('.header__title').addClass('header__title--active');
             $('.burger').removeClass('burger--active');
             $('.burger').removeClass('burger--loading');
             $('.line').removeClass('line--loading');

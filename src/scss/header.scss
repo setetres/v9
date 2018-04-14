@@ -18,29 +18,40 @@
     }
 
     &__title {
-        color: $black;
-        display: none;
-        font-size: 28px;
-        left: 0;
-        margin: -70px 0 0 15px;
-        opacity: 0;
+        @extend %small;
+        background-color: $black;
+        color: $white;
+        display: block;
+        left: -100%;
+        margin: -1px 0 0;
+        opacity: 1;
+        padding: 5px 10px 6px;
         pointer-events: none;
         position: absolute;
-        text-transform: uppercase;
-        transform: rotate(-90deg);
-        transform-origin: bottom left;
-        transition: transform ($timing * 2) $easing-in ($delay * 3), opacity ($timing * 2) $easing-in ($delay * 3), margin-top ($timing * 2) $easing-in ($delay * 3);
-
-        a {
-            color: $accent-color;
-            opacity: 1;
-            text-decoration: none;
-        }
+        text-transform: none;
+        transition: left ($timing * 4) $easing-in ($delay * 3);
 
         &--active {
-            margin-top: -90px;
-            opacity: 1;
-            transition: transform ($timing * 2) $easing-out, opacity ($timing * 2) $easing-out, margin-top ($timing * 2) $easing-out;
+            left: 0;
+            transition: left ($timing * 4) $easing-out ($delay * 3);
+        }
+    }
+
+    &__title span {
+        &:first-child {
+            display: none;
+
+            @media (min-width: map-get($grid, lg)) {
+                display: inline-block;
+            }
+        }
+
+        &:last-child {
+            display: inline-block;
+
+            @media (min-width: map-get($grid, lg)) {
+                display: none;
+            }
         }
     }
 }
