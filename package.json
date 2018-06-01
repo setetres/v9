@@ -17,7 +17,7 @@
     "license": "CC-BY-4.0",
     "homepage": "http://setetres.st",
     "devDependencies": {
-        "autoprefixer": "8.5.1",
+        "autoprefixer": "^8.5.2",
         "browser-sync": "2.24.4",
         "del": "3.0.0",
         "glob": "7.1.2",
