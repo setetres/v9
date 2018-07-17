@@ -261,12 +261,5 @@
         page('/contact/', contact);
         page('/inkstarter/', inkstarter);
         page();
-
-        $(window).on('load', function() {
-            pageLoaded();
-        });
-
-        $(window).on('debouncedresize', function(){
-        });
     });
 }());

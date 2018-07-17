@@ -4,44 +4,43 @@ html(lang='en', itemscope='', itemtype='http://schema.org')
         include ../inc/meta.pug
 
         title Sete Três — Contact
-        meta(name='description', content="Drop me a line.")
+        meta(name='description', content='Drop me a line.')
         link(rel='canonical', href='https://setetres.st/contact/')
 
         meta(property='og:type', content='website')
         meta(property='og:title', content='Sete Três — Contact')
-        meta(property='og:description', content="Drop me a line.")
+        meta(property='og:description', content='Drop me a line.')
         meta(property='og:image', content='https://setetres.st/img/share-contact.png')
         meta(property='og:url', content='https://setetres.st/contact/')
 
         meta(itemprop='name', content='Sete Três — Contact')
-        meta(itemprop='description', content="Drop me a line.")
+        meta(itemprop='description', content='Drop me a line.')
         meta(itemprop='image', content='https://setetres.st/img/share-contact.png')
         meta(itemprop='url', content='https://setetres.st/contact/')
 
         meta(name='twitter:card', content='summary')
         meta(name='twitter:title', content='Sete Três — Contact')
-        meta(name='twitter:description', content="Drop me a line.")
+        meta(name='twitter:description', content='Drop me a line.')
         meta(name='twitter:image', content='https://setetres.st/img/share-contact.png')
     body.body.body--loading
         include ../inc/progress.pug
-        .body-component
-            include ../inc/header.pug
-            include ../inc/navigation.pug
-            main#main.main
-                .main-wrapper
-                    section.section.section--contact
-                        .giphy#giphy
-                        form.contact-form#contact-form(action='//formspree.io/xodbpkbm', method='post')
-                            input.contact-form__input(type='text', name='name', placeholder='Name', required='', tabindex='1', autocomplete='off')
-                            input.contact-form__input(type='email', name='_replyto', placeholder='Email', required='', tabindex='2', autocomplete='off')
-                            input.contact-form__input(type='text', name='message', placeholder='Hello,', required='', tabindex='3', autocomplete='off')
-                            button.contact-form__button(type='submit', tabindex='4')
-                                span Send
-                                i.shake.shake-chunkn(aria-hidden='true') 🎉
-                            input(type='hidden', name='_next', value='?=success')
-                            input(type='hidden', name='_format', value='plain')
-                            input(type='hidden', name='_language', value='pt')
-                            input(type='hidden', name='_subject', value='Contact')
-                            input(type='text', name='_gotcha', style='display: none')
-            include ../inc/stripe.pug
-            include ../inc/scripts.pug
+        include ../inc/header.pug
+        include ../inc/navigation.pug
+        main#main.main
+            .main-wrapper
+                section.section.section--contact
+                    .giphy#giphy
+                    form.contact-form#contact-form(action='//formspree.io/xodbpkbm', method='post')
+                        input.contact-form__input(type='text', name='name', placeholder='Name', required='', tabindex='1', autocomplete='off')
+                        input.contact-form__input(type='email', name='_replyto', placeholder='Email', required='', tabindex='2', autocomplete='off')
+                        input.contact-form__input(type='text', name='message', placeholder='Hello,', required='', tabindex='3', autocomplete='off')
+                        button.contact-form__button(type='submit', tabindex='4')
+                            span Send
+                            i.shake.shake-chunkn(aria-hidden='true') 🎉
+                        input(type='hidden', name='_next', value='?=success')
+                        input(type='hidden', name='_format', value='plain')
+                        input(type='hidden', name='_language', value='pt')
+                        input(type='hidden', name='_subject', value='Contact')
+                        input(type='text', name='_gotcha', style='display: none')
+        include ../inc/stripe.pug
+        include ../inc/scripts.pug
