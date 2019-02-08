@@ -6,10 +6,6 @@
     "scripts": {
         "start": "gulp default && gulp watch"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://bitbucket.org/setetres/setetres-v9"
-    },
     "author": {
         "name": "Guilherme Pangnotta",
         "url": "http://setetres.st"
